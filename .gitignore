@@ -25,6 +25,7 @@ node_modules
 
 # Virtual env metadata
 .venv
+venv/
 
 .vscode
 package-lock.json
