@@ -19,11 +19,18 @@ export const NavBar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar 
+      position="static"
+      elevation={6}
+      sx={{
+        background: '#968dff', // Gradient effect
+        boxShadow: '0px 4px 12px rgba(0,0,0,0.2)',
+      }}
+    >
       <Toolbar>
         <IconButton
           edge="start"
-          color="inherit"
+          color="secondary"
           aria-label="menu"
           onClick={() => setDrawerOpen(true)}
         >
@@ -32,7 +39,9 @@ export const NavBar = () => {
         <Typography
           variant="h6"
           component="div"
-          sx={{ flexGrow: 1, cursor: 'pointer' }}
+          color='secondary'
+          fontWeight={'bold'}
+          sx={{ flexGrow: 1, cursor: 'pointer', paddingLeft: '1rem' }}
           onClick={() => handleNav('/feed')}
         >
           SocialSphere
@@ -61,7 +70,7 @@ export const NavBar = () => {
 
         <Box sx={{ display: 'flex', gap: 2 }}>
           {navItems.map((item) => (
-            <Button key={item.text} color="inherit" onClick={() => handleNav(item.path)}>
+            <Button key={item.text} color="secondary" onClick={() => handleNav(item.path)}>
               {item.text}
             </Button>
           ))}
